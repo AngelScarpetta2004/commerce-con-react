@@ -9,11 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/orbitron": "^5.2.5",
     "boostrap": "^2.0.0",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "leaflet": "^1.9.4",
-    "next": "15.1.6",
+    "next": "^15.3.0",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.9",
     "react-dom": "^19.0.0",

@@ -1,41 +1,62 @@
-"use client" // Requerido para usar los hooks en Next.js
+"use client";
 
-import { createContext, useState, useContext } from "react"
+import { createContext, useState, useContext } from "react";
 
-// Crear el contexto de productos
 const CartContext = createContext();
 
+export const CartProvider = ({ children }) => {
+  const [cartItems, setCartItems] = useState([]);
 
-// Proveedor de productos - contexto
-export const CartProvider = ({children}) => {
-    const [cartItems, setCartItems] = useState([]);
+  const addToCart = (product) => {
+    const existingItem = cartItems.find((item) => item.id === product.id);
+    if (existingItem) {
+      setCartItems((prevCart) =>
+        prevCart.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        )
+      );
+    } else {
+      setCartItems((prevCart) => [...prevCart, { ...product, quantity: 1 }]);
+    }
+  };
 
-    // Funcion para agregar productos al carrito
-    const addToCart = (product) => {
-        setCartItems((prevCart)=> [...prevCart, product]);
-    };
+  const removeFromCart = (id) => {
+    setCartItems((prevCart) => prevCart.filter((item) => item.id !== id));
+  };
 
-    return (
-        <CartContext.Provider value={{cartItems, addToCart}}>
-            {children}
-        </CartContext.Provider>
+  const increaseQuantity = (id) => {
+    setCartItems((prevCart) =>
+      prevCart.map((item) =>
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+      )
     );
+  };
+
+  const decreaseQuantity = (id) => {
+    setCartItems((prevCart) =>
+      prevCart.map((item) =>
+        item.id === id && item.quantity > 1
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      )
+    );
+  };
+
+  return (
+    <CartContext.Provider
+      value={{
+        cartItems,
+        addToCart,
+        removeFromCart,
+        increaseQuantity,
+        decreaseQuantity,
+      }}
+    >
+      {children}
+    </CartContext.Provider>
+  );
 };
 
-// Hook personalizado para usar el contexto de productos
 export const useCart = () => useContext(CartContext);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

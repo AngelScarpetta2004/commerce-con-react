@@ -1,7 +1,18 @@
 .mapContainer {
-    height: 80vh;
-    width: 100%;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
+  margin-top: 6rem;
+  height: 80vh;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 249, 255, 0.3), 
+              0 0 40px rgba(0, 249, 255, 0.2), 
+              0 0 60px rgba(0, 249, 255, 0.1);
+  border: 2px solid #00f9ff;
+  background-color: #05001a;
+  transition: box-shadow 0.3s ease;
+}
+
+.mapContainer:hover {
+  box-shadow: 0 0 25px #00f9ff, 0 0 60px #00f9ff;
+}

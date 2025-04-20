@@ -1,25 +1,44 @@
-/*Import font*/
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+/* Import fonts and Bootstrap */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&display=swap');
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-
-:root{
-    --background-color-body: #282F44;
-    --background-color-navbar: #191D32;
-    --color-text: #f0f0f0;
-    --font-family: 'Roboto', sans-serif;
+/* Define global color and font variables */
+:root {
+  --background-color-body: #0a0a23;
+  --background-color-navbar: rgba(15, 15, 25, 0.75);
+  --color-text: #e0f7fa;
+  --color-accent: #00fff7;
+  --font-family: 'Orbitron', sans-serif;
+  --shadow-neon: 0 0 12px rgba(0, 255, 247, 0.4);
 }
 
-
-
-body {
-    background-color: var(--background-color-body); 
-    margin: 0;
-    padding: 0;
-    font-family: var(--font-family); 
-}
-
+/* Global Reset and Layout */
 * {
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+    margin-top: 6rem; /* o 32px */
+  }
+  
+body {
+  background-color: var(--background-color-body);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Links */
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #00e6d2;
+  text-shadow: var(--shadow-neon);
 }

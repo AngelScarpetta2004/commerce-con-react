@@ -1,0 +1,19 @@
+.footer {
+    background-color: #0a0a23;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    border-top: 1px solid cyan;
+    box-shadow: 0 -4px 10px rgba(0, 255, 255, 0.3);
+    position: relative;
+    z-index: 10;
+  }
+  
+  .footer span {
+    display: block;
+    margin-top: 0.3rem;
+    color: #00ffff;
+  }
+  

@@ -1,10 +1,18 @@
+'use client';
 
+
+import HeroSection from '@/app/components/HeroSection';
+import ProductosDestacados from '@/app/components/ProductosDestacados';
 
 export default function Home() {
+  const agregarAlCarrito = (producto) => {
+    console.log('Producto agregado:', producto); // Luego conectas a tu store o context
+  };
+
   return (
-    <div>
-      <h1>¡Bienvidos a Next.js con App Router!</h1>
-      <p>Esta es mi primera pagina con la nueva tc Next</p>
-    </div>
+    <>
+      <HeroSection />
+      <ProductosDestacados agregarAlCarrito={agregarAlCarrito} />
+    </>
   );
 }

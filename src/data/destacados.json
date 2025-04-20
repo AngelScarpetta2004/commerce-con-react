@@ -1,0 +1,73 @@
+[
+    {
+      "id": 1,
+      "nombre": "HyperCar X",
+      "descripcion": "Diseño aerodinámico con energía solar.",
+      "precio": 89000,
+      "imagen": "/images/2.png"
+    },
+    {
+      "id": 2,
+      "nombre": "BMW MX",
+      "descripcion": "Autonomía de 1200 km con IA integrada.",
+      "precio": 102000,
+      "imagen": "/images/3.png"
+    },
+    {
+      "id": 3,
+      "nombre": "Mercedes Lite",
+      "descripcion": "Compacto, elegante y completamente eléctrico.",
+      "precio": 849000,
+      "imagen": "/images/4.png"
+    },
+    {
+      "id": 4,
+      "nombre": "NeoCar Z",
+      "descripcion": "Un deportivo llamativo y unico",
+      "precio": 77000,
+      "imagen": "/images/5.png"
+    },
+    {
+      "id": 5,
+      "nombre": "FuturCar R",
+      "descripcion": "Futurista, Todoterreno y  completamente eléctrico.",
+      "precio": 177000,
+      "imagen": "/images/6.png"
+    },
+    {
+      "id": 6,
+      "nombre": "AeroFusion R",
+      "descripcion": "Una Maquina que te sirve tanto para el suelo como para los aires",
+      "precio": 999000,
+      "imagen": "/images/7.png"
+    },
+    {
+      "id": 7,
+      "nombre": "Pagani ultra",
+      "descripcion": "Un deportivo hibrido que te ayuda a experimentar los limites de la velocidad ",
+      "precio": 777000,
+      "imagen": "/images/8.png"
+    },
+    {
+      "id": 8,
+      "nombre": "Volver Al Futuro",
+      "descripcion": "Sientete como en una pelicula con este carro totalmente electrico",
+      "precio": 100000,
+      "imagen": "/images/9.png"
+    },
+    {
+      "id": 9,
+      "nombre": "AeroX",
+      "descripcion": "Compacto, elegante y completamente eléctrico.",
+      "precio": 79000,
+      "imagen": "/images/10.png"
+    },
+    {
+      "id": 10,
+      "nombre": "AeroFusion Z",
+      "descripcion": "Compacto, elegante, con un dron y completamente eléctrico.",
+      "precio": 189000,
+      "imagen": "/images/11.png"
+    }
+  ]
+  

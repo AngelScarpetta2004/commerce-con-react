@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Toast, ToastContainer } from "react-bootstrap";
+import "@fontsource/orbitron"; // Asegúrate de instalarlo
 
 import styles from "@/styles/Contact.module.css";
 import MapComponent from '@/app/components/MapComponent';
@@ -71,9 +72,9 @@ export default function Contact() {
       {/* Notificacion con Bootstrap*/}
 
       <ToastContainer position="top-end" className="p-3">
-        <Toast bg={toastVariant} show={showToast} onClose={() => setShowToast(false)} delay={3000} autohide>
-          <Toast.Body className="text-white">{toastMessage}</Toast.Body>
-        </Toast>
+      <Toast bg={toastVariant} show={showToast} onClose={() => setShowToast(false)} delay={3000} autohide style={{ backgroundColor: "#0a001f", border: "1px solid #00f9ff", boxShadow: "0 0 15px #00f9ff" }}>
+        <Toast.Body className="text-white">{toastMessage}</Toast.Body>
+      </Toast>
       </ToastContainer>
 
       {/* Incorporar el component del mapa */}

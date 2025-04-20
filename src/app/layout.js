@@ -5,6 +5,7 @@ import '../styles/globals.css';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { CartProvider } from '@/context/CartContext';
+import styles from '@/styles/footer.module.css';
 
 
 
@@ -20,10 +21,10 @@ export default function RootLayout({ children }) {
           </header>
 
           {/* Main */}
-          <main className='mainContet'>{children}</main>
+          <main className='mainContet' style={{ paddingTop: '50px' }}>{children}</main>
 
           {/* Footer */}
-          <footer>
+          <footer className={styles.footer}>
             <p>© 2025 - Todos los derechos reservados</p>
           </footer>
         </CartProvider>

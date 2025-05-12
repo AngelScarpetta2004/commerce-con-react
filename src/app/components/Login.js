@@ -1,52 +1,75 @@
-import React, {useState} from "react";
-import axios from "axios";
+import React, { useState } from "react";
+import { useAuth } from "../../context/AuthContext";
+import { useRouter } from "next/navigation";
+import styles from "../../styles/Login.module.css";
 
-const Login = ({setToken}) => {
-    const [email, setEmail] = useState(""); 
+const Login = () => {
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    const { login } = useAuth();
+    const router = useRouter();
 
-    const handlelLogin = async (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault();
+        setError("");
 
-        try{
-            const response = await axios.post("http://localhost:5000/api/auth/login", {email, password});
-            const token = response.data.token;
-            setToken(token); // guardarlo en el estado global (localstorare)
-            localStorage.setItem("token", token);
-        }catch (error){
-            setError("Credenciales invalidas");
+        const result = await login(email, password);
+        if (result.success) {
+            router.push('/dashboard');
+        } else {
+            setError(result.error);
         }
     };
 
-    //TODO: CREAR EL COMPONENTE DE REGISTRO -> RETURN Y HTML
     return (
-        <div>
-            <h2>Iniciar Sesion Admin</h2>
-            <form onSubmit={handlelLogin}>
+        <div className={styles.loginContainer}>
+            <div className={styles.loginBox}>
                 <div>
-                    <input
-                     type="email"
-                     placeholder="Email" 
-                     value={email} 
-                     onChange={(e) => setEmail(e.target.value)} 
-                    />  
+                    <h2 className={styles.title}>
+                        Iniciar Sesión Admin
+                    </h2>
                 </div>
-                <div>
-                     {/* input para password */}
-                     <input 
-                     type="password"
-                     placeholder="Password"
-                     value={password}
-                     onChange={(e) => setPassword(e.target.value)}
-                    />  
-                </div>
-                {error && <p>{error}</p>}
+                <form className={styles.form} onSubmit={handleLogin}>
+                    <div className={styles.inputGroup}>
+                        <div>
+                            <input
+                                type="email"
+                                required
+                                className={styles.input}
+                                placeholder="Email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                        </div>
+                        <div>
+                            <input
+                                type="password"
+                                required
+                                className={styles.input}
+                                placeholder="Contraseña"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                        </div>
+                    </div>
 
-                {/* Button to submit al form */}
-                <button type="submit">Login</button>
-            </form>
+                    {error && (
+                        <div className={styles.error}>
+                            {error}
+                        </div>
+                    )}
 
+                    <div>
+                        <button
+                            type="submit"
+                            className={styles.button}
+                        >
+                            Iniciar Sesión
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     );
 };

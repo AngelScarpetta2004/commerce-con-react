@@ -1,0 +1,113 @@
+.authContainer {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0a0a23;
+    padding: 20px;
+}
+
+.authBox {
+    background: rgba(15, 15, 25, 0.85);
+    padding: 36px 32px;
+    border-radius: 16px;
+    box-shadow: 0 0 24px #00fff7, 0 0 8px #00fff7;
+    width: 100%;
+    max-width: 400px;
+    color: #e0f7fa;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: #00fff7;
+    text-shadow: 0 0 12px #00fff7;
+    letter-spacing: 2px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input {
+    width: 100%;
+    padding: 14px;
+    border: 1.5px solid #00fff7;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    background: #181828;
+    color: #e0f7fa;
+    font-family: 'Orbitron', sans-serif;
+    box-shadow: 0 0 8px #00fff7 inset;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #00fff7;
+    box-shadow: 0 0 16px #00fff7, 0 0 8px #00fff7 inset;
+    color: #00fff7;
+}
+
+.error {
+    color: #ff4d6d;
+    text-align: center;
+    font-size: 15px;
+    background: #181828;
+    border-radius: 6px;
+    padding: 8px 0;
+    box-shadow: 0 0 8px #ff4d6d44;
+}
+
+.button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, #00fff7 0%, #00bcd4 100%);
+    color: #0a0a23;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    box-shadow: 0 0 8px #00fff7;
+    transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+}
+
+.button:hover {
+    background: #00bcd4;
+    color: #fff;
+    box-shadow: 0 0 24px #00fff7, 0 0 8px #00fff7;
+}
+
+.switchText {
+    text-align: center;
+    margin-top: 15px;
+    color: #e0f7fa;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.switchLink {
+    color: #00fff7;
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: bold;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.switchLink:hover {
+    color: #00bcd4;
+    text-shadow: 0 0 8px #00fff7;
+} 

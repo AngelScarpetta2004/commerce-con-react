@@ -31,11 +31,14 @@ export default function Navbar() {
         <li><Link href='/products'>Productos</Link></li>
         <li><Link href='/users'>Usuarios</Link></li>
         <li><Link href='/contact'>Contacto</Link></li>
+        <li><Link href='/pasarelas' className='btn btn-primary'>Ir a pasarelas</Link></li>
         <li className={styles.cartContainer}>
           <Link href='/cart' className={styles.cartLink}>
             <i className='bi bi-cart3'></i>
             {cartItems.length > 0 && (
-              <span className={styles.cartBadge}>{cartItems.length}</span>
+              <span className={styles.cartBadge}>
+                {cartItems.reduce((acc, item) => acc + (item.quantity || 1), 0)}
+              </span>
             )}
           </Link>
         </li>
